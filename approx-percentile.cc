@@ -15,7 +15,7 @@
  */
 
 #include "approx-percentile.h"
-#include "tdigest.h"
+#include "TDigest.h"
 
 #include <cereal/cereal.hpp>
 #include <cereal/types/vector.hpp>
@@ -100,7 +100,6 @@ void ApproxPercentileMerge(FunctionContext* context, const StringVal& src, Strin
   // merge into destination Intermediate
   auto dst_intermediate = reinterpret_cast<Intermediate*>(dst->ptr);
   dst_intermediate->digest.merge(&src_intermediate.digest);
-  dst_intermediate->digest.updateCumulative();
   dst_intermediate->targetQuantile = src_intermediate.targetQuantile;
 }
 
