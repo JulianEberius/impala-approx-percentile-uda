@@ -1,0 +1,6 @@
+[submodule "tdigest"]
+	path = tdigest
+	url = https://github.com/derrickburns/tdigest.git
+[submodule "cereal"]
+	path = cereal
+	url = https://github.com/USCiLab/cereal.git
